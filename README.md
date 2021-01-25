@@ -1,0 +1,2 @@
+# STM32_POCSAG_Transmit
+一个使用STM32和ESP8266实现的POCSAG无线编码发送设备，可以用来向老式的BP机发送消息。
