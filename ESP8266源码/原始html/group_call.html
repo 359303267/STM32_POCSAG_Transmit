@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="GB18030"> 
+    <title>摩托罗拉寻呼发射器web服务</title> 
+    <script>
+        function myFunction(){
+            alert("按下确认发送数据");
+        }
+    </script>
+    <style type="text/css">
+        .htm_head{
+            text-align: center;
+        }
+        .user_guide{
+            margin: auto;
+            width: 600px;
+            border: 3px solid rgb(53, 121, 247);
+            padding: 10px;
+        }
+        
+        .user_guide_title{
+            text-align: center;
+        }
+        .herd_setting{
+            margin: auto;
+            width: 600px;
+            border: 3px solid rgb(53, 121, 247);
+            padding: 10px;
+            text-align: center;
+        }
+        .group_setting{
+            margin: auto;
+            width: 600px;
+            border: 3px solid rgb(53, 121, 247);
+            padding: 10px;
+            text-align: center;
+        }
+        select{
+            border:1px solid rgb(53, 121, 247);
+            width:245px;
+            height:25px;
+        }
+        textarea{
+            border:1px solid rgb(53, 121, 247);
+            width:580px;
+            height:300px;
+        }
+        h1{
+            font-size: 55px;
+        }
+        button{
+            background-color: rgb(53, 121, 247);
+            font-size: 18px;
+            width:130px;
+            height:40px;
+            border-radius: 5px;
+            color: white;
+        }
+        .send_button{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="htm_head">
+        <h1>摩托罗拉寻呼发射器web服务</h1>
+        <h3>(WIFI模块控制)</h3>
+        <a href="/">返回单呼</a>
+    </div>
+    
+    <div class="user_guide">
+        <div class="user_guide_title">
+            <h3>使用说明(User guide)</h3>
+        </div>
+            <p>1、群呼使用的是第一组呼机配置，请事先将对应呼机的配置导入到第一组配置中。</p>
+            <p>2、勾选“发送预先导入消息”之后，将会发送导入配置中的消息，输入框中的消息将不会发送。</p>
+    </div>
+            
+    <div class="herd_setting">
+    <form role="form" action="" method="POST" target="form_iframe">
+        <table>
+            <tr>
+                <td>
+                    <h3>群呼（Herd call）</h3>
+                    <p>请选择欲群呼的呼机编号：</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="r_num" value="01">01
+                    <input type="checkbox" name="r_num" value="02">02
+                    <input type="checkbox" name="r_num" value="03">03
+                    <input type="checkbox" name="r_num" value="04">04
+                    <input type="checkbox" name="r_num" value="05">05
+                    <input type="checkbox" name="r_num" value="06">06
+                    <input type="checkbox" name="r_num" value="07">07
+                    <input type="checkbox" name="r_num" value="08">08
+                    <input type="checkbox" name="r_num" value="09">09
+                    <input type="checkbox" name="r_num" value="10">10
+                    <br>
+                    <input type="checkbox" name="r_num" value="11">11
+                    <input type="checkbox" name="r_num" value="12">12
+                    <input type="checkbox" name="r_num" value="13">13
+                    <input type="checkbox" name="r_num" value="14">14
+                    <input type="checkbox" name="r_num" value="15">15
+                    <input type="checkbox" name="r_num" value="16">16
+                    <input type="checkbox" name="r_num" value="17">17
+                    <input type="checkbox" name="r_num" value="18">18
+                    <input type="checkbox" name="r_num" value="19">19
+                    <input type="checkbox" name="r_num" value="20">20
+                    <br>
+                    <input type="checkbox" name="r_herd_pre" value="pre">发送预先导入消息
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="form-control" name="r_message" rows="8" cols="45" style="font-size: 18pt" maxlength="200" placeholder="在此填写消息内容，限制200个字符。"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    
+                    <div class="send_button"> 
+                    <button type="submit" onclick="myFunction()">开始群呼</button> 
+                </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <iframe id="form_iframe" name="form_iframe" style="display:none;"></iframe>
+    </div>
+    <div class="group_setting">
+        <form role="form" action="" method="POST" target="form_iframe">
+            <table>
+                <tr>
+                    <td>
+                        <h3>组呼（Group call）</h3>
+                        <p>请选择组号：</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select class="form-control" name="r_group">
+                            <option value="00">01</option>
+                            <option value="01">02</option>
+                            <option value="02">03</option>
+                            <option value="03">04</option>
+                            <option value="04">05</option>
+                            <option value="05">06</option>
+                            <option value="06">07</option>
+                            <option value="07">08</option>
+                            <option value="08">09</option>
+                            <option value="09">10</option>
+                            <option value="10">11</option>
+                            <option value="11">12</option>
+                            <option value="12">13</option>
+                            <option value="13">14</option>
+                            <option value="14">15</option>
+                            <option value="15">16</option>
+                            <option value="16">17</option>
+                            <option value="17">18</option>
+                            <option value="18">19</option>
+                            <option value="19">20</option>
+                        </select>
+                        <br>
+                        <input type="checkbox" name="r_group_pre" value="pre">发送预先导入消息
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea class="form-control" name="r_message" rows="8" cols="45" style="font-size: 18pt" maxlength="200" placeholder="在此填写消息内容，限制200个字符。"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                        <div class="send_button"> 
+                        <button type="submit" onclick="myFunction()">开始组呼</button> 
+                    </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <iframe id="form_iframe" name="form_iframe" style="display:none;"></iframe>
+        </div>
+    
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="GB18030"> 
+    <title>摩托罗拉寻呼发射器web服务</title> 
+    <script>
+        function myFunction(){
+            alert("按下确认之后请检查OLED是否显示连接成功");
+        }
+    </script>
+    <style type="text/css">
+        .htm_head{
+            text-align: center;
+        }
+        input{
+            border:1px solid rgb(53, 121, 247);
+            width:240px;
+            height:25px;
+            font-size: 15px;
+        }
+        .wifi_setting{
+            margin: auto;
+            width: 270px;
+            border: 3px solid rgb(53, 121, 247);
+            padding: 10px;
+            text-align: center;
+        }
+        h1{
+            font-size: 55px;
+        }
+        button{
+            background-color: rgb(53, 121, 247);
+            font-size: 18px;
+            width:130px;
+            height:40px;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="htm_head">
+        <h1>摩托罗拉寻呼发射器web服务</h1>
+        <h3>(WIFI模块控制)</h3>
+    </div>
+    
+    <div class="wifi_setting">
+    <form role="form" action="" method="POST" target="form_iframe">
+        <table>
+            <tr>
+                <td>
+                    <h3>配置Wifi（Wifi configure）</h3>
+                    <p>请输入需要连接的Wifi名称和密码：</p>
+                </td>
+            </tr>
+            <tr>
+                <td> <input type="text" class="form-control" name="r_ssid" id="ssid" maxlength="29" placeholder="Wifi名称" /> </td>
+            </tr>
+            <tr>
+                <td> <input type="text" class="form-control" name="r_psk" id="psk" maxlength="29" placeholder="Wifi密码" /> </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" onclick="myFunction()">连接Wifi</button> 
+                </td>
+            </tr>
+        </table>
+    </form>
+    <iframe id="form_iframe" name="form_iframe" style="display:none;"></iframe>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="GB18030" /> 
+  <title>摩托罗拉寻呼发射器web服务</title> 
+  <script>
+        function myFunction(){
+            alert("按下确认发送数据");
+        }
+        function jump_group(){
+        window.location.href="group_call";
+        }
+        function jump_wifi(){
+        window.location.href="wifi";
+        }
+        </script> 
+  <style type="text/css">
+        .htm_head{
+            text-align: center;
+        }
+        .user_guide{
+            margin: auto;
+            width: 900px;
+            border: 3px solid rgb(53, 121, 247);
+            padding: 10px;
+        }
+        .setting{
+            margin: auto;
+            width: 900px;
+            border: 3px solid rgb(53, 121, 247);
+            padding: 10px;
+        }
+        input{
+            border:1px solid rgb(53, 121, 247);
+            width:240px;
+            height:25px;
+        }
+        select{
+            border:1px solid rgb(53, 121, 247);
+            width:245px;
+            height:25px;
+        }
+        textarea{
+            border:1px solid rgb(53, 121, 247);
+            width:630px;
+            height:450px;
+        }
+        button{
+            background-color: rgb(53, 121, 247);
+            font-size: 18px;
+            width:130px;
+            height:40px;
+            border-radius: 5px;
+            color: white;
+        }
+        h1{
+            font-size: 55px;
+        }
+        .send_button{
+            float: right;
+        }
+    </style> 
+ </head> 
+ <body> 
+  <div class="htm_head"> 
+   <h1>摩托罗拉寻呼发射器web服务</h1> 
+   <h3>(WIFI模块控制)</h3> 
+  </div> 
+  <div class="user_guide"> 
+   <h3>使用说明(User guide)</h3> 
+   <p>1、在参数配置面板中填入呼机相关配置信息（其中频率、地址码、相位、速率这四项为重要指标），在欲发送消息面板中输入想要发送的消息。</p> 
+   <p>2、当您点击发送消息按钮之后，消息会立即发送。当您点击进入群呼按钮之后，会跳转到群呼页面。</p> 
+  </div> 
+  <div class="setting"> 
+   <form role="form" action="" method="POST" target="form_iframe"> 
+    <table> 
+     <tbody>
+      <tr> 
+       <td> <h3>参数配置(Configure)</h3> </td> 
+       <td> <h3>欲发送消息(Message)</h3> </td> 
+      </tr> 
+      <tr> 
+       <td> <label for="addr">地址码(Address code)：</label> </td> 
+       <td rowspan="20"> 
+        <table> 
+         <tbody>
+          <tr>
+           <td><textarea class="form-control" name="r_message" rows="14" cols="45" style="font-size: 18pt" maxlength="200" placeholder="在此填写消息内容，限制200个字符。"></textarea></td>
+          </tr> 
+          <tr>
+           <td><input type="hidden" name="r_endchar" value="r_endchar" /></td>
+          </tr> 
+          <tr>
+           <td> 
+             <button type="button" onclick="jump_group()">进入群呼</button> 
+             <button type="button" onclick="jump_wifi()">连接Wifi</button> 
+            <div class="send_button"> 
+             <button type="submit" onclick="myFunction()">发送消息</button> 
+            </div> </td>
+           <td></td>
+          </tr> 
+         </tbody>
+        </table> </td> 
+      </tr> 
+      <tr> 
+       <td> <input type="text" class="form-control" name="r_addr" id="addr" maxlength="7" placeholder="地址码范围：0000001 - 2097151" /> </td> 
+      </tr> 
+      <tr> 
+       <td> <label for="phase">频率(Frequency)：</label> </td> 
+      </tr> 
+      <tr> 
+       <td> <input type="text" class="form-control" name="r_freq" id="freq" maxlength="8" placeholder="频率范围：136.0000 - 174.0000" /> </td> 
+      </tr> 
+      <tr> 
+       <td> <label for="phase">相位(Phase)：</label> </td> 
+      </tr> 
+      <tr> 
+       <td> <select class="form-control" name="r_phase"> <option value="P">正相位</option> <option value="N">负相位 </option></select> </td> 
+      </tr>
+      <tr> 
+      </tr>
+      <tr> 
+       <td> <label for="rate">速率(Rate bit/s)：</label> </td> 
+      </tr> 
+      <tr> 
+       <td> <select class="form-control" name="r_rate"> <option value="L">512</option> <option value="H">1200</option> <option value="S">2400</option> </select> </td> 
+      </tr> 
+      <tr> 
+       <td> <label for="type">呼机类型(Device type)：</label> </td> 
+      </tr> 
+      <tr> 
+       <td> <select class="form-control" name="r_type"> <option value="N">数字机</option> <option value="T">汉字机</option> </select> </td> 
+      </tr> 
+      <tr> 
+       <td> <label for="beep">响声功能位(Beep type)：</label> </td> 
+      </tr> 
+      <tr> 
+       <td> <select class="form-control" name="r_beep"> <option>0</option> <option>1</option> <option>2</option> <option>3</option> </select> </td> 
+      </tr> 
+      <tr>
+       <td> 
+        <hr /> <h3>Tips:</h3> 
+        <table width="240px" style="text-align:center"> 
+         <tbody>
+          <tr>
+           <th colspan="2">数字机只能输入&quot;0&quot;~&quot;9&quot;以及&quot;A&quot;~&quot;F&quot;</th> 
+          </tr>
+          <tr>
+           <td>A -&gt; 换行</td>
+           <td>B -&gt; &quot;U&quot;</td>
+          </tr> 
+          <tr>
+           <td>C -&gt; 空格</td>
+           <td>D -&gt; &quot;-&quot;</td>
+          </tr> 
+          <tr>
+           <td>E -&gt; &quot;[&quot;</td>
+           <td>F -&gt; &quot;]&quot;</td>
+          </tr> 
+         </tbody>
+        </table> </td>
+      </tr> 
+     </tbody>
+    </table> 
+   </form>
+  </div>  
+  <iframe id="form_iframe" name="form_iframe" style="display:none;"></iframe>  
+ </body>
+</html>
