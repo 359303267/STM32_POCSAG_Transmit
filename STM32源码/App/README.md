@@ -1,0 +1,2 @@
+# App程序
+使用之前必须先下载Bootloader才可以正常使用，App程序可以在后期使用Bootloader进行你更新。
