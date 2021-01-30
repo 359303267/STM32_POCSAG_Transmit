@@ -362,8 +362,8 @@ void init_25qxx_all()
 	write_25qxx_oled_status((u8*)"1");
 	write_25qxx_delay1((u8*)"200");
 	write_25qxx_delay2((u8*)"200");
-	write_25qxx_ssid((u8*)"CMCC-dii4");
-	write_25qxx_psk((u8*)"ujeqgrfn");
+	write_25qxx_ssid((u8*)"Wifi-SSID");
+	write_25qxx_psk((u8*)"Wifi-PSK");
 	write_25qxx_wifionoff((u8*)"1");
 }
 
